@@ -169,7 +169,10 @@ async function UpdateMessage(ctx){
 async function createChartImage(ctx) {
   try {
     await new Promise(resolve => setTimeout(resolve, 500));
-    const browser = await puppeteer.launch({ executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" });
+    const browser = await puppeteer.launch({ 
+      headless:'new',
+      executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" 
+    });
     const page = await browser.newPage();
     UpdateMessage(ctx);
     await page.goto(`file://${__dirname}/chart.html`, { waitUntil: 'networkidle0' });

@@ -18,11 +18,13 @@
     "fusioncharts": "^3.20.0",
     "gnuplot": "^0.3.1",
     "mysql": "^2.18.1",
-    "puppeteer": "^20.1.2",
+    "puppeteer": "^20.2.1",
     "telegraf": "^4.12.2",
-    "util": "^0.12.5"
+    "util": "^0.12.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "packageManager": "yarn@3.5.1"
 }
