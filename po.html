@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body,
+        #container {
+            margin: 0;
+            height: 100%;
+        }
+
+        .chart-container {
+            width: 50%;
+            height: 50%;
+            float: left;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Temperature Chart</title>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fint.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="chart-container" id="chart-container-1"></div>
+        <div class="chart-container" id="chart-container-2"></div>
+        <div class="chart-container" id="chart-container-3"></div>
+        <div class="chart-container" id="chart-container-4"></div>
+    </div>
+    <script>
+        FusionCharts.ready(function () {
+            // Inizializza e rendere ogni chart in un diverso container
+            var chart1 = new FusionCharts({
+                type: 'thermometer',
+                renderAt: 'chart-container-1',
+                width: '100%',
+                height: '100%',
+                dataFormat: 'json',
+                dataSource: {
+                    "chart": {
+                        "caption": "Temperature",
+                        "lowerLimit": "-5",
+                        "upperLimit": "45",
+                        "decimals": "2",
+                        "numberSuffix": "°C",
+                        "theme": "fint",
+                        "chartBottomMargin": "20",
+                        "showValue": "1",
+                        "valueFontColor": "#000000",
+                        "bgcolor": "",
+                        "plotFillColor": "#FFFF99",
+                        "plotFillAlpha": "70",
+                        "plotBorderThickness": "0",
+                        "showBorder": "1"
+                    },
+                    "value": "29.01"
+                }
+            }).render();
+
+
+            var chart2 = new FusionCharts({
+                type: 'hlineargauge',
+                renderAt: 'chart-container-2',
+                width: '100%',
+                height: '100%',
+                dataFormat: 'json',
+                dataSource: {
+                    "chart": {
+                        "caption": "Humidity",
+                        "lowerLimit": "0",
+                        "upperLimit": "100",
+                        "numberSuffix": "%",
+                        "theme": "fint"
+                    },
+                    "colorRange": {
+                        "color": [{
+                            "minValue": "0",
+                            "maxValue": "50",
+                            "code": "#87CEFA"
+                        }, {
+                            "minValue": "50",
+                            "maxValue": "75",
+                            "code": "#5e81ac"
+                        }, {
+                            "minValue": "75",
+                            "maxValue": "100",
+                            "code": "#0077be"
+                        }]
+                    },
+                    "pointers": {
+                        "pointer": [{
+                            "value": "50.61%",
+                            "thickness": "5",
+                            "color": "#000000"
+                        }]
+                    }
+                }
+            }).render();
+
+            var chart3 = new FusionCharts({
+                type: 'pie2d',
+                renderAt: 'chart-container-3',
+                width: '100%',
+                height: '100%',
+                dataFormat: 'json',
+                dataSource: {
+                    "chart": {
+                        "caption": "Pressure",
+                        "numberPrefix": "hPa",
+                        "showPercentValues": "1",
+                        "showLegend": "1",
+                        "legendPosition": "right",
+                        "theme": "fusion"
+                    },
+                    "data": [{
+                        "label": "Standard Pressure",
+                        "value": "1013,25"
+                    }, {
+                        "label": "Pressure",
+                        "value": "350000"
+                    }]
+                }
+            }).render();
+
+            var chart4 = new FusionCharts({
+                type: 'bulb',
+                renderAt: 'chart-container-4',
+                width: '99%',
+                height: '99%',
+                dataFormat: 'json',
+                dataSource: {
+                    "chart": {
+                        "caption": "Gas Resistance",
+                        "numberPrefix": "KOhm",
+                        "upperlimit": "-5",
+                        "lowerlimit": "50",
+                        "captionPadding": "30",
+                        "showshadow": "0",
+                        "showvalue": "1",
+                        "useColorNameAsValue": "1",
+                        "placeValuesInside": "1",
+                        "valueFontSize": "16",
+                        //Tooltext
+                        "plottooltext": "<span id='headerdiv' style='font-family:\"Arial\", \"Helvetica\";font-size: 13px;font-weight: bold;'>Current Temperature:</span>{br}<div id='valueDiv' style=' color: #EEEEEE; text-align:center;font-size: 25px; padding: 10px;  margin-top:5px; font-family:\"Arial\", \"Helvetica\"; font-weight: bold;'>$value°C</div>",
+                        //Theme
+                        "theme": "fusion"
+                    },
+                    "colorrange": {
+                        "color": [{
+                            "minvalue": "0",
+                            "maxvalue": "50000",
+                            "label": "5",
+                            "code": "#00ff00"
+                        }]
+                    },
+                    "data": {
+                        "value": "5"
+                    }
+                }
+            }).render();
+        });
+    </script>
+</body>
+
+</html>

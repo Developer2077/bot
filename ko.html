@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          height: 100vh;
+          width: 100vw;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .grid-item {
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
+        
+        #chart-container-1 {
+          grid-row: 1 / span 1;
+          grid-column: 1 / span 1;
+        }
+        
+        #chart-container-2 {
+          grid-row: 2 / span 1;
+          grid-column: 1 / span 1;
+        }
+        
+        #chart-container-3 {
+          grid-row: 1 / span 1;
+          grid-column: 2 / span 1;
+        }
+        
+        #chart-container-4 {
+          grid-row: 2 / span 1;
+          grid-column: 2 / span 1;
+        }
+      </style>
+  <title>Temperature Chart</title>
+  <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+  <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fint.js"></script>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item" id="chart-container-1"></div>
+        <div class="grid-item" id="chart-container-2"></div>
+        <div class="grid-item" id="chart-container-3"></div>
+        <div class="grid-item" id="chart-container-4"></div>
+      </div>
+    <script>
+    FusionCharts.ready(function() {
+      // Inizializza e rendere ogni chart in un diverso container
+      var chart1 = new FusionCharts({
+        type: 'thermometer',
+        renderAt: 'chart-container-1',
+        width: '100%',
+        height: '100%',
+        dataFormat: 'json',
+        dataSource: {
+          "chart": {
+            // Imposta le opzioni del chart 1
+          },
+          "value": "29,01" // Prendi il valore dal json
+        }
+      }).render();
+
+      var chart2 = new FusionCharts({
+        type: 'thermometer',
+        renderAt: 'chart-container-2',
+        width: '100%',
+        height: '100%',
+        dataFormat: 'json',
+        dataSource: {
+          "chart": {
+            // Imposta le opzioni del chart 2
+          },
+          "value": "29,01" // Prendi il valore dal json
+        }
+      }).render();
+
+      var chart3 = new FusionCharts({
+        type: 'thermometer',
+        renderAt: 'chart-container-3',
+        width: '100%',
+        height: '100%',
+        dataFormat: 'json',
+        dataSource: {
+          "chart": {
+            // Imposta le opzioni del chart 3
+          },
+          "value": "29,01" // Prendi il valore dal json
+        }
+      }).render();
+
+      var chart4 = new FusionCharts({
+        type: 'thermometer',
+        renderAt: 'chart-container-4',
+        width: '100%',
+        height: '100%',
+        dataFormat: 'json',
+        dataSource: {
+          "chart": {
+            // Imposta le opzioni del chart 4
+          },
+          "value": "29,01" // Prendi il valore dal json
+        }
+      }).render();
+    });
+  </script>
+</body>
+</html>

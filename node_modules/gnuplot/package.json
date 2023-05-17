@@ -1,0 +1,26 @@
+{
+  "name": "gnuplot",
+  "version": "0.3.1",
+  "description": "node gnuplot wrapper",
+  "main": "gnuplot.js",
+  "scripts": {
+    "test": "node gnuplot-test.js"
+  },
+  "author": "davvo",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/davvo/node-gnuplot.git"
+  },
+  "keywords": [
+    "gnuplot",
+    "plot"
+  ],
+  "bugs": {
+    "url": "https://github.com/davvo/node-gnuplot/issues"
+  },
+  "homepage": "https://github.com/davvo/node-gnuplot",
+  "dependencies": {
+    "comandante": "0.0.1"
+  }
+}
