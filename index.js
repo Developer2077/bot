@@ -208,7 +208,8 @@ bot.command('chart', async (ctx) => {
 });
 
 async function createChartHTML(data) {
-  const chartHTML = `
+  try {
+    const chartHTML = `
   <!DOCTYPE html>
 <html>
 
@@ -381,6 +382,10 @@ async function createChartHTML(data) {
 </html>
   `;
   await promisify(fs.writeFile)('chart.html', chartHTML);
+  } catch (error) {
+    
+  }
+  
 }
 
 bot.launch();
